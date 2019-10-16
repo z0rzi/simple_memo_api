@@ -1,0 +1,40 @@
+omg: 1
+info:
+    version: 1.0.0
+    title: Simple Memo API
+    description: This is a simple memo API written in NodeJS
+    contact:
+        name: Baptiste Zorzi
+        url: https://github.com/z0rzi
+        email: baptiste.zorzi@gmail.com
+    license:
+        name: Nope
+        url: https://nopenope.com
+lifecycle:
+    startup:
+        command: [ 'npm', 'start' ]
+health:
+    http:
+        path: /
+        port: 5000
+actions:
+    getMemos:
+        help: Convert a currency into another currency
+        http:
+            port: 5000
+            method: get
+            path: /
+        arguments:
+        output:
+            type: object
+            contentType: application/json
+            properties:
+                status:
+                    type: string
+                message:
+                    type: string
+                data:
+                    type: list
+                    elements:
+                        type: string
+

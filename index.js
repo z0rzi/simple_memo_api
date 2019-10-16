@@ -206,6 +206,18 @@ app.get("/:memoName", function(req, res) {
 
 });
 
+app.get("/", function(req, res) {
+
+    fetchExistingMemosNames(names => {
+        res.send({
+            "status": "success",
+            "message": "Memo retreived successfully",
+            "data": names
+        })
+    });
+    
+});
+
 app.delete("/:memoName", function(req, res) {
     let memoName = req.params.memoName;
 
